@@ -318,7 +318,9 @@ export function Timeline() {
         <Image src="/highlights/line-today.svg" alt="" width={363} height={2} unoptimized className="h-2 w-363 max-w-none shrink-0 rotate-90" />
       </div>
       <div className="absolute left-394 top-40 size-8 bg-black s:size-6" />
-      <Image src="/highlights/line-dash-h.svg" alt="" width={555} height={1} unoptimized className="absolute left-40 top-403 h-1 w-555" />
+      {/* Plain <img>: a 1px hairline scaled fluidly trips next/image's aspect-ratio warning. */}
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img src="/highlights/line-dash-h.svg" alt="" className="absolute left-40 top-403 h-1 w-555" />
       <Cursor kind="hand" label="You" at={T.youRest} className="timeline_you opacity-0" />
     </div>
   );

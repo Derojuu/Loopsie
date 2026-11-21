@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { useRef } from "react";
 import { cn } from "@/utils/cn";
 import { useGsap } from "@/hooks/useGsap";
@@ -219,7 +218,9 @@ export function IncomeGauge() {
           </p>
         </div>
       </div>
-      <Image src="/highlights/line-dash-h.svg" alt="" width={555} height={1} unoptimized className="absolute left-40 top-362 h-1 w-555" />
+      {/* Plain <img>: a 1px hairline scaled fluidly trips next/image's aspect-ratio warning. */}
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img src="/highlights/line-dash-h.svg" alt="" className="absolute left-40 top-362 h-1 w-555" />
       <div className="absolute left-1/2 top-359 size-6 -translate-x-1/2 rounded-full bg-[#b4b4b4]" />
     </div>
   );
