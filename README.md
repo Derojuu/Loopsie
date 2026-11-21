@@ -1,36 +1,46 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Loopsii — Next.js
 
-## Getting Started
+A component-based Next.js rebuild of the Loopsii landing page (original capture lives in `HTML_source/`).
 
-First, run the development server:
+## Stack
+
+- Next.js 16 (App Router), React 19, TypeScript
+- Tailwind CSS 4 (theme mirrors the original fluid design system)
+- GSAP 3 (ScrollTrigger, SplitText, MorphSVG, DrawSVG, CustomEase) + Lenis smooth scroll
+- `@hugeicons/react` + `@hugeicons/core-free-icons` for stock UI icons
+- pnpm
+
+## Scripts
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+pnpm install
+pnpm dev      # http://localhost:3000
+pnpm build
+pnpm start
+pnpm lint
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Structure
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```
+app/                  # layout, page, global Tailwind entry (globals.css), icon
+components/
+  layout/             # navigation, site footer / global canvas, cookie banner
+  sections/<name>/    # one folder per page section (Hero, Intro, …, Faq, Outro)
+  ui/                 # shared primitives (Button, RevealText, …)
+  providers/          # SmoothScroll (Lenis ↔ ScrollTrigger)
+constants/            # copy, data arrays, links, motion tokens
+hooks/                # useGsap, useMediaQuery, useWeightHover, …
+lib/                  # fonts, gsap registration, structured data
+styles/               # original component CSS split per section
+  app-demo/           # the embedded app mock's own (prefixed `app:`) stylesheet
+utils/                # cn()
+assets/fonts/         # Saans + Caveat variable fonts (next/font/local)
+public/               # images, SVG art, lotties, footer video
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Design system notes
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- `--spacing` is fluid: `1` unit = `container / 1920 × 16 / 16` px (with tablet/phone ideals), so
+  numeric utilities such as `w-910`, `rounded-20`, `border-2`, `px-cont`, `py-section` scale with the viewport exactly like the original.
+- Responsive variants: `l:` (≤1023px), `s:` (≤479px), `pc:` (≥1024px).

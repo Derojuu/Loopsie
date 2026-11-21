@@ -1,0 +1,201 @@
+.h1 {
+  font-size: calc(100 * var(--spacing-head));
+  letter-spacing: -0.03em;
+  font-variation-settings: "wght" 600;
+  line-height: 1;
+}
+@media screen and (width<=1023px) {
+  .h1 {
+    font-size: calc(82 * var(--spacing));
+  }
+}
+@media screen and (width<=479px) {
+  .h1 {
+    font-size: calc(42 * var(--spacing));
+  }
+}
+.counter {
+  font-size: calc(270 * var(--spacing));
+  letter-spacing: -0.03em;
+  font-variation-settings: "wght" 700;
+  line-height: 0.67;
+}
+@media screen and (width<=1023px) {
+  .counter {
+    font-size: calc(170 * var(--spacing));
+  }
+}
+@media screen and (width<=479px) {
+  .counter {
+    font-size: calc(160 * var(--spacing));
+  }
+}
+.h2 {
+  font-size: calc(74 * var(--spacing-head));
+  letter-spacing: -0.02em;
+  font-variation-settings: "wght" 500;
+  line-height: 1;
+}
+@media screen and (width<=1023px) {
+  .h2 {
+    font-size: calc(54 * var(--spacing));
+  }
+}
+@media screen and (width<=479px) {
+  .h2 {
+    font-size: calc(32 * var(--spacing));
+  }
+}
+.h3 {
+  font-size: calc(54 * var(--spacing-head));
+  font-variation-settings: "wght" 600;
+  line-height: 1.1;
+}
+@media screen and (width<=1023px) {
+  .h3 {
+    font-size: calc(32 * var(--spacing));
+  }
+}
+@media screen and (width<=479px) {
+  .h3 {
+    font-size: calc(32 * var(--spacing));
+  }
+}
+.text-xl {
+  font-size: calc(28 * var(--spacing));
+  letter-spacing: -0.03em;
+  font-variation-settings: "wght" 500;
+  line-height: 1.4;
+}
+@media screen and (width<=1023px) {
+  .text-xl {
+    font-size: calc(26 * var(--spacing));
+  }
+}
+@media screen and (width<=479px) {
+  .text-xl {
+    font-size: calc(22 * var(--spacing));
+  }
+}
+.text-tag {
+  font-size: calc(24 * var(--spacing));
+  letter-spacing: -0.01em;
+  line-height: 1.25;
+}
+@media screen and (width<=1023px) {
+  .text-tag {
+    font-size: calc(18 * var(--spacing));
+  }
+}
+.label {
+  font-size: clamp(12.6px, 14 * var(--spacing), 15.4px);
+  text-transform: uppercase;
+  font-variation-settings: "wght" 400;
+  line-height: 0.67;
+}
+.text-note {
+  font-size: calc(22 * var(--hand-scale) * var(--spacing));
+}
+.font-hand {
+  font-family: var(--font-hand);
+  font-variation-settings: "wght" 700;
+  font-style: normal;
+}
+.text-lead-semi {
+  font-size: calc(20 * var(--spacing));
+  font-variation-settings: "wght" 600;
+  line-height: 1.4;
+}
+@media screen and (width>=1024px) {
+  .text-lead-semi {
+    font-size: max(16px, 20 * var(--spacing));
+  }
+}
+@media screen and (width<=1023px) {
+  .text-lead-semi {
+    font-size: calc(16 * var(--spacing));
+  }
+}
+.text-copy {
+  font-size: calc(16 * var(--spacing));
+}
+@media screen and (width>=1024px) {
+  .text-copy {
+    font-size: max(16px, 16 * var(--spacing));
+  }
+}
+.ui-8 {
+  font-size: calc(8 * var(--spacing));
+}
+.ui-9 {
+  font-size: calc(9 * var(--spacing));
+}
+.ui-10 {
+  font-size: calc(10 * var(--spacing));
+}
+.ui-12 {
+  font-size: calc(12 * var(--spacing));
+}
+.ui-13 {
+  font-size: calc(13 * var(--spacing));
+}
+.ui-14 {
+  font-size: calc(14 * var(--spacing));
+}
+.ui-15 {
+  font-size: calc(15 * var(--spacing));
+}
+.ui-16 {
+  font-size: calc(16 * var(--spacing));
+}
+.ui-32 {
+  font-size: calc(32 * var(--spacing));
+}
+.ui-52 {
+  font-size: calc(52 * var(--spacing));
+}
+.visual-title {
+  font-size: calc(28 * var(--spacing));
+  font-variation-settings: "wght" 600;
+  line-height: 1.1;
+}
+.main-grid {
+  row-gap: calc(var(--spacing) * 20);
+  grid-template-columns: repeat(12, 1fr);
+}
+@media screen and (width<=479px) {
+  .h-px {
+    height: 0.75px;
+  }
+  .w-px {
+    width: 0.75px;
+  }
+  .bg-black\/20 {
+    background-color: #0002;
+  }
+  .bg-current\/20 {
+    background-color: color-mix(in srgb, currentColor 13.3%, transparent);
+  }
+}
+.grid-lines {
+  background-image:
+    linear-gradient(90deg, #ff6e6e26 1px, #0000 1px),
+    linear-gradient(#ff6e6e26 1px, #0000 1px);
+  background-size: 34px 34px;
+}
+@media screen and (width<=479px) {
+  .title_wrapper .h2 {
+    font-size: calc(var(--spacing) * 34);
+  }
+  .parenthesis_parent {
+    font-size: calc(var(--spacing) * 40);
+  }
+}
+.unit-pos {
+  left: calc(var(--spacing) * var(--x));
+  top: calc(var(--spacing) * var(--y));
+  position: absolute;
+}
+.unit-w {
+  width: calc(var(--spacing) * var(--w));
+}

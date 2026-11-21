@@ -1,0 +1,115 @@
+.nav_body {
+  --nav-ink: color-mix(
+    in srgb,
+    var(--color-white) calc(var(--nav-inverse) * 100%),
+    var(--color-black)
+  );
+  --nav-text: color-mix(
+    in srgb,
+    var(--color-black) calc(var(--nav-inverse) * 100%),
+    var(--color-white)
+  );
+  --nav-label: color-mix(
+    in srgb,
+    var(--color-black) calc(round(var(--nav-inverse)) * 100%),
+    var(--color-white)
+  );
+  border: 1px solid color-mix(in srgb, var(--nav-ink) 40%, transparent);
+  border-radius: calc(var(--spacing) * 50);
+  backdrop-filter: blur(calc(var(--spacing) * 15));
+  transition:
+    background-color 0.5s ease,
+    border-radius 0.5s ease,
+    width 0.9s var(--smooth);
+  flex-direction: column;
+  justify-content: flex-start;
+  display: flex;
+  position: relative;
+  overflow: hidden;
+}
+@media (width<=479px) {
+  .nav_body {
+    border-width: 0.75px;
+    border-color: color-mix(in srgb, var(--nav-ink) 30%, var(--nav-text));
+  }
+}
+.nav_body.is-compact {
+  width: min(var(--spacing) * 910, 100%);
+}
+@media (width<=1023px) {
+  .nav_body.is-compact {
+    width: min(var(--spacing) * 570, 100%);
+  }
+}
+.nav_bar {
+  --btn-ink: var(--nav-label);
+  position: relative;
+}
+.nav_bar .nav_logo {
+  color: var(--nav-ink);
+}
+.nav_bar .btn_bg-solid {
+  background-color: var(--nav-ink);
+}
+.nav_bar .btn_text-wrapper,
+.nav_bar .btn_arrow-parent {
+  color: var(--nav-label);
+}
+.nav_link {
+  font-size: calc(16 * var(--spacing));
+  letter-spacing: -0.03em;
+  font-variation-settings: "wght" 500;
+  color: var(--nav-ink);
+  white-space: nowrap;
+  line-height: 1.3;
+}
+.nav_panel {
+  visibility: hidden;
+  pointer-events: none;
+  max-height: 0;
+}
+.nav_outro .btn {
+  margin-left: calc(var(--spacing) * 2 - var(--arrowSize, 0px));
+}
+@media (width<=1023px) {
+  .nav_outro-note {
+    font-size: calc(18 * var(--hand-scale) * var(--spacing));
+    line-height: calc(30.6 * var(--spacing));
+  }
+}
+@media (width<=479px) {
+  .nav_outro-title {
+    font-size: calc(34 * var(--spacing));
+    letter-spacing: -0.03em;
+  }
+  .nav_outro-note {
+    font-size: calc(16 * var(--hand-scale) * var(--spacing));
+    line-height: calc(27.2 * var(--spacing));
+  }
+  .nav_legal {
+    font-size: calc(15 * var(--spacing));
+    line-height: 1.4;
+  }
+  .nav_legal .nav_legal-socials {
+    border-color: #0002;
+    border-bottom-width: 0.75px;
+  }
+}
+.nav_legal {
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* --- Runtime states (rules missing from the saved stylesheet, reconstructed from NavMorph) --- */
+.nav_body {
+  width: 100%;
+}
+.nav_body.is-active .nav_panel {
+  visibility: visible;
+  pointer-events: auto;
+  max-height: none;
+}
+.nav_body.is-open {
+  background-color: var(--color-white);
+  border-radius: calc(var(--spacing) * 20);
+}

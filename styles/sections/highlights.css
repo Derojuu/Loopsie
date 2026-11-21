@@ -1,0 +1,186 @@
+@media (width>=1024px) {
+  .highlights_cards {
+    perspective: calc(var(--spacing) * 2000);
+  }
+  .highlights_card {
+    top: calc(
+      var(--stack-top, calc(var(--spacing) * 320)) + var(--nav-space, 0px) +
+        var(--i, 0) * var(--spacing) * 26
+    );
+    will-change: transform;
+    backface-visibility: hidden;
+    position: sticky;
+  }
+  .highlights_card--last {
+    position: relative;
+    top: 0;
+  }
+}
+@media (width<=1023px) {
+  .highlights_title {
+    top: calc(var(--nav-space, 0px) + var(--spacing) * 40);
+    margin-bottom: calc(var(--spacing) * 20);
+    position: sticky;
+  }
+  .highlights_card {
+    top: calc(
+      var(--nav-space, 0px) + var(--spacing) * (168 + 15 * var(--i, 0))
+    );
+    position: sticky;
+  }
+  .highlights_points {
+    grid-template-columns: 1fr 1fr;
+    display: grid;
+  }
+  .highlights_points > li {
+    padding-block: calc(var(--spacing) * 10);
+    border-width: 0;
+  }
+  .highlights_points .text-copy {
+    font-size: calc(15 * var(--spacing));
+  }
+  .highlights_points > li:nth-child(2n) {
+    padding-left: calc(var(--spacing) * 20);
+  }
+  .highlights_points > li:nth-child(-n + 2) {
+    padding-top: 0;
+  }
+  .highlights_points > li:nth-child(n + 3) {
+    border-top: 1px solid #0003;
+  }
+  .highlights_points > li:nth-last-child(-n + 2) {
+    padding-bottom: 0;
+  }
+}
+@media (width<=479px) {
+  .highlights_title {
+    margin-bottom: calc(var(--spacing) * 40);
+    font-size: calc(34 * var(--spacing));
+    letter-spacing: -0.03em;
+    position: relative;
+    top: auto;
+  }
+  .highlights_cards {
+    grid-auto-rows: 1fr;
+    display: grid;
+  }
+  .highlights_card {
+    top: calc(var(--nav-space, 0px) + var(--spacing) * (20 + 12 * var(--i, 0)));
+    box-shadow: 0 0 calc(var(--spacing) * 20) #00000008;
+  }
+  .highlights_card > :first-child {
+    flex: none;
+  }
+  .highlights_card .text-lead-semi {
+    font-size: calc(15 * var(--spacing));
+  }
+  .highlights_media {
+    flex: 1;
+  }
+  .highlights_points {
+    flex-direction: column;
+    display: flex;
+  }
+  .highlights_points > li,
+  .highlights_points > li:nth-child(2n),
+  .highlights_points > li:nth-child(-n + 2),
+  .highlights_points > li:nth-last-child(-n + 2) {
+    padding: calc(var(--spacing) * 6) 0;
+    border-top: 0.75px solid #0002;
+  }
+  .highlights_points > li:first-child {
+    border-top: 0;
+    padding-top: 0;
+  }
+  .highlights_points > li:last-child {
+    padding-bottom: 0;
+  }
+  .highlights_points .text-copy {
+    font-size: calc(14 * var(--spacing));
+  }
+}
+.highlights_step {
+  font-size: calc(22 * var(--hand-scale) * var(--spacing));
+  line-height: calc(37.4 * var(--spacing));
+}
+@media screen and (width<=1023px) {
+  .highlights_step {
+    font-size: calc(16 * var(--hand-scale) * var(--spacing));
+    line-height: calc(27.2 * var(--spacing));
+  }
+}
+.highlights_step-total {
+  font-size: calc(14 * var(--hand-scale) * var(--spacing));
+  line-height: calc(23.8 * var(--spacing));
+}
+@media screen and (width<=1023px) {
+  .highlights_step-total {
+    font-size: calc(12 * var(--hand-scale) * var(--spacing));
+    line-height: calc(20.4 * var(--spacing));
+  }
+}
+.highlights_card-title {
+  font-size: calc(34 * var(--spacing));
+  font-variation-settings: "wght" 600;
+  line-height: 1.1;
+}
+@media screen and (width<=1023px) {
+  .highlights_card-title {
+    font-size: calc(28 * var(--spacing));
+  }
+}
+@media screen and (width<=479px) {
+  .highlights_card-title {
+    max-width: calc(var(--spacing) * 261);
+    font-size: calc(20 * var(--spacing));
+    text-wrap: balance;
+  }
+}
+.highlights_media {
+  container-type: inline-size;
+}
+.timeline_world {
+  transform: translateX(calc(var(--spacing) * var(--shift) * -1));
+}
+.requests_list {
+  perspective: calc(var(--spacing) * 900);
+}
+.requests_fade {
+  background: linear-gradient(to bottom, var(--color-grey), transparent);
+}
+.requests_fade--bottom {
+  background: linear-gradient(to top, var(--color-grey), transparent);
+}
+.agent_thread {
+  transform: translateY(calc(var(--spacing) * var(--shift)));
+}
+.agent_fade {
+  background: linear-gradient(to bottom, var(--color-grey), transparent);
+}
+.dictate_area {
+  font-size: calc(20 * var(--spacing));
+  letter-spacing: -0.01em;
+  line-height: 1.35;
+}
+.dictate_area > .dictate_word {
+  white-space: nowrap;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.dictate_pill {
+  transform-origin: 50% 100%;
+}
+.clock {
+  container-type: inline-size;
+}
+.clock > * {
+  --spacing: calc(100cqw/460);
+}
+/* Added in the React port: rules the original applied from JS or left implicit. */
+.dictate_gap {
+  margin-top: 0.675em;
+}
+.dictate_bar {
+  transform: scaleY(var(--bar, 0.1875));
+}

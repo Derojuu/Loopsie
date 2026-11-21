@@ -1,0 +1,32 @@
+.outro_title {
+  letter-spacing: -0.02em;
+  font-variation-settings: "wght" 600;
+  line-height: 0.9;
+}
+@media screen and (width<=1023px) {
+  .outro_title {
+    font-size: calc(71 * var(--spacing));
+  }
+}
+@media screen and (width<=767px) {
+  .outro_title {
+    font-size: calc(58 * var(--spacing));
+  }
+}
+@media screen and (width<=479px) {
+  .outro_title {
+    --wave: 0.31;
+    font-size: calc(31.74 * var(--spacing));
+  }
+  .outro_line {
+    margin-inline: calc(var(--spacing) * -14);
+  }
+}
+
+/* Desktop base size (the saved stylesheet only had the ≤1023px sizes); the
+   runtime fit in OutroTitle shrinks it so the words span the full line width. */
+@media screen and (width>=1024px) {
+  .outro_title {
+    font-size: calc(160 * var(--spacing));
+  }
+}

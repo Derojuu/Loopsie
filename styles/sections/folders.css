@@ -1,0 +1,60 @@
+@media screen and (width<=1023px) {
+  .folders_card {
+    grid-template-columns: calc(var(--spacing) * 255) 1fr;
+    gap: calc(var(--spacing) * 40);
+    display: grid;
+  }
+  .folders_card h2 {
+    align-self: last baseline;
+  }
+  .folders_card .btn {
+    grid-column: 2;
+    justify-self: start;
+  }
+  .folders_side {
+    display: contents;
+  }
+  .folders_text {
+    max-width: none;
+    font-size: calc(15 * var(--spacing));
+    align-self: last baseline;
+  }
+}
+@media screen and (width<=479px) {
+  .folders_card {
+    gap: calc(var(--spacing) * 20);
+    display: flex;
+  }
+  .folders_card h2 {
+    max-width: calc(var(--spacing) * 193);
+    font-size: calc(24 * var(--spacing));
+    text-wrap: balance;
+    align-self: auto;
+    line-height: 1.11;
+  }
+  .folders_side {
+    gap: calc(var(--spacing) * 40);
+    display: flex;
+  }
+  .folders_text {
+    align-self: auto;
+  }
+}
+.folders_tile {
+  container-type: inline-size;
+}
+.folders_stack {
+  --spacing: calc(100cqw/910);
+  font-variation-settings: normal;
+  line-height: 1.2;
+}
+.folders_item {
+  --hover: 0;
+  transform: translateY(calc((var(--top) + var(--hover)) * var(--spacing)));
+  will-change: transform;
+  top: 0;
+}
+.folders_label {
+  left: calc(var(--x) * var(--spacing));
+  font-size: calc(22 * var(--hand-scale) * var(--spacing));
+}

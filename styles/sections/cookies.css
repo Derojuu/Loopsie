@@ -1,0 +1,28 @@
+.cookies_text {
+  font-size: calc(16 * var(--spacing));
+  line-height: 1.4;
+}
+@media screen and (width<=479px) {
+  .cookies_text {
+    font-size: calc(14 * var(--spacing));
+  }
+}
+.cookies_ok {
+  font-size: calc(16 * var(--spacing));
+  font-variation-settings: "wght" 540;
+  transition:
+    background-color 0.3s,
+    color 0.3s;
+}
+@media (hover: hover) {
+  .cookies_ok:hover {
+    background-color: var(--color-black);
+    color: var(--color-white);
+  }
+}
+@media screen and (width<=479px) {
+  .cookies_ok {
+    font-size: calc(14 * var(--spacing));
+    border-width: 0.75px;
+  }
+}

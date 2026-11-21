@@ -1,0 +1,106 @@
+:root {
+  --font-body: var(--font-title);
+  --screen-h: 100lvh;
+  --size-unit: 16;
+  --hand-scale: 1.5;
+  --size-container-ideal: 1920;
+  --size-container-min: 1200px;
+  --size-container-max: 2560px;
+  --size-container: clamp(
+    var(--size-container-min),
+    100vw,
+    var(--size-container-max)
+  );
+  --size-font: calc(
+    var(--size-container)/(var(--size-container-ideal)/var(--size-unit))
+  );
+  --spacing-head: min(
+    calc(var(--size-font)/var(--size-unit)),
+    calc(var(--screen-h)/1080)
+  );
+  --smooth: cubic-bezier(0.76, 0, 0.24, 1);
+}
+@media screen and (width<=1023px) {
+  :root {
+    --size-container-ideal: 768;
+    --size-container-min: 768px;
+    --size-container-max: 1023px;
+    --spacing-head: calc(var(--size-font)/var(--size-unit));
+  }
+}
+@media screen and (width<=767px) {
+  :root {
+    --size-container-ideal: 768;
+    --size-container-min: 480px;
+    --size-container-max: 767px;
+  }
+}
+@media screen and (width<=479px) {
+  :root {
+    --size-container-ideal: 375;
+    --size-container-min: 320px;
+    --size-container-max: 479px;
+  }
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  background-color: var(--color-grey);
+  color: var(--color-black);
+  font-family: var(--font-body);
+  font-size: calc(16 * var(--spacing));
+  font-variation-settings: "wght" 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizelegibility;
+  line-height: 1;
+}
+a {
+  cursor: pointer;
+}
+main {
+  overflow: clip;
+}
+::selection,
+::-webkit-selection {
+  background: var(--color-lime-light);
+  color: var(--color-black);
+}
+body {
+  --nav-space: calc(var(--nav-offset, 0px) + var(--nav-height, 0px));
+}
+@property --nav-inverse {
+  syntax: "<number>";
+  inherits: true;
+  initial-value: 0;
+}
+@property --adm-w {
+  syntax: "<length>";
+  inherits: true;
+  initial-value: 1200px;
+}
+@property --adm-h {
+  syntax: "<length>";
+  inherits: true;
+  initial-value: 680px;
+}
+@property --adm-z {
+  syntax: "<number>";
+  inherits: true;
+  initial-value: 1;
+}
+@media screen and (width<=1023px) {
+  :root {
+    --cont: calc(var(--spacing) * 40);
+  }
+}
+@media screen and (width<=479px) {
+  :root {
+    --cont: calc(var(--spacing) * 20);
+  }
+}
+html.lenis,
+html.lenis body {
+  height: auto;
+}

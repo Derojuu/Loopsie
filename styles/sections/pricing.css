@@ -1,0 +1,115 @@
+.pricing_title {
+  text-wrap: balance;
+}
+.pricing_option {
+  font-size: calc(34 * var(--spacing));
+  letter-spacing: -0.02em;
+  font-variation-settings: "wght" 600;
+  cursor: pointer;
+  line-height: 1.3;
+  transition: opacity 0.3s ease-out;
+}
+.pricing_option:not(.is-active):hover {
+  opacity: 0.6;
+}
+@media screen and (width<=479px) {
+  .pricing_option {
+    font-size: calc(20 * var(--spacing));
+  }
+}
+.pricing_switch {
+  cursor: pointer;
+}
+.pricing_knob {
+  transition: translate 0.45s cubic-bezier(0.3, 1.3, 0.4, 1);
+}
+.pricing_save {
+  color: #547354;
+  translate: 0 calc(var(--spacing) * 2);
+  line-height: 1.2;
+}
+@media screen and (width<=479px) {
+  .pricing_save {
+    font-size: calc(17 * var(--hand-scale) * var(--spacing));
+  }
+}
+.pricing_sheet {
+  transition: background-color 0.5s ease-out;
+}
+.pricing_price {
+  transition: opacity 0.4s ease-out;
+}
+.pricing.is-gl .pricing_sheet {
+  background: 0 0;
+}
+.pricing.is-gl .pricing_price {
+  opacity: 0;
+}
+.pricing_card-title {
+  font-size: calc(28 * var(--spacing));
+  letter-spacing: -0.02em;
+  font-variation-settings: "wght" 600;
+  line-height: 1.3;
+}
+.pricing_amount {
+  font-size: calc(164 * var(--spacing));
+  letter-spacing: -0.02em;
+  font-variation-settings: "wght" 500;
+  line-height: 0.9;
+}
+@media screen and (width<=479px) {
+  .pricing_amount {
+    font-size: calc(120 * var(--spacing));
+  }
+}
+.pricing_period,
+.pricing_note {
+  font-size: calc(28 * var(--spacing));
+  letter-spacing: -0.02em;
+  font-variation-settings: "wght" 600;
+  white-space: nowrap;
+  line-height: 0.9;
+}
+.pricing_note {
+  opacity: 0.3;
+}
+.pricing_cta {
+  font-size: calc(20 * var(--spacing));
+  font-variation-settings: "wght" 600;
+  line-height: 0.9;
+}
+.pricing_cta .btn_text {
+  font-size: inherit;
+  font-variation-settings: inherit;
+}
+.pricing_cta .btn_text-wrapper {
+  clip-path: inset(0 round calc(20 * var(--spacing)));
+}
+.pricing_cta .btn_text-wrapper .btn_bg-item,
+.pricing_cta .btn_text-wrapper .btn_bg-solid {
+  width: 100%;
+  left: 0;
+}
+.pricing_cta .btn_arrow-parent {
+  margin-right: 0;
+}
+
+/* Toggle knob travel (the original stylesheet only declared its transition). */
+.pricing.is-yearly .pricing_knob {
+  translate: calc(var(--spacing) * 47 - 2px) 0;
+}
+@media screen and (width<=479px) {
+  .pricing.is-yearly .pricing_knob {
+    translate: calc(var(--spacing) * 34 - 2px) 0;
+  }
+}
+/* No-WebGL / reduced-motion fallback: coloured sheet + cross-fading price layers. */
+.pricing:not(.is-gl) .pricing_sheet {
+  background-color: var(--sheet);
+}
+.pricing.is-yearly:not(.is-gl) .pricing_sheet {
+  background-color: var(--sheet-next);
+}
+.pricing_price:not(.is-active) {
+  opacity: 0;
+}

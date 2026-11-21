@@ -1,0 +1,115 @@
+.btn_text {
+  font-variation-settings: "wght" 540;
+  white-space: nowrap;
+  line-height: 0.9;
+}
+@media screen and (width<=1023px) {
+  .btn_text {
+    font-size: calc(18 * var(--spacing));
+  }
+}
+@media screen and (width<=479px) {
+  .btn_text {
+    font-size: calc(14 * var(--spacing));
+  }
+}
+.btn_text-wrapper .btn_bg-item,
+.btn_text-wrapper .btn_bg-solid {
+  left: calc(var(--arrowSize) * -1);
+  width: calc(var(--width) + var(--spacing) * 3);
+  height: 100%;
+  top: 0;
+}
+.btn_text-wrapper {
+  clip-path: inset(0px round calc(var(--height)));
+}
+@media screen and (width<=479px) {
+  .btn_text-wrapper {
+    padding: calc(13.7 * var(--spacing)) calc(20 * var(--spacing));
+  }
+}
+.btn_arrow-bg {
+  clip-path: polygon(
+    88.65% 68.6%,
+    84.22% 74.48%,
+    79.21% 79.95%,
+    73.71% 84.91%,
+    67.82% 89.26%,
+    61.64% 92.94%,
+    55.26% 95.89%,
+    48.8% 98.05%,
+    42.38% 99.39%,
+    36.1% 99.88%,
+    30.06% 99.51%,
+    24.38% 98.3%,
+    19.14% 96.26%,
+    14.45% 93.43%,
+    10.37% 89.85%,
+    6.98% 85.59%,
+    4.34% 80.72%,
+    2.49% 75.32%,
+    1.46% 69.49%,
+    1.28% 63.32%,
+    1.93% 56.93%,
+    3.42% 50.41%,
+    5.72% 43.89%,
+    8.79% 37.47%,
+    12.57% 31.26%,
+    17% 25.37%,
+    22.01% 19.9%,
+    27.51% 14.95%,
+    33.4% 10.6%,
+    39.59% 6.91%,
+    45.97% 3.97%,
+    52.42% 1.81%,
+    58.85% 0.47%,
+    65.13% 0%,
+    71.16% 0.34%,
+    76.85% 1.56%,
+    82.08% 3.6%,
+    86.78% 6.43%,
+    90.86% 10.01%,
+    94.24% 14.27%,
+    96.89% 19.14%,
+    98.74% 24.54%,
+    99.76% 30.37%,
+    99.95% 36.53%,
+    99.29% 42.93%,
+    97.8% 49.45%,
+    95.5% 55.97%,
+    92.44% 62.39%
+  );
+}
+.btn_arrow-parent {
+  margin-right: calc(var(--spacing) * -2);
+}
+.btn_arrow-parent .btn_bg-item,
+.btn_arrow-parent .btn_bg-solid {
+  width: calc(var(--width));
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+.btn_bg-solid {
+  --progress: 1;
+}
+.btn_bg-item,
+.btn_bg-solid {
+  clip-path: polygon(
+    calc(var(--next, 0) * 100% - 1px) 0,
+    calc(var(--progress, 0) * 100%) 0,
+    calc(var(--progress, 0) * 120%) 100%,
+    calc(var(--next, 0) * 120% - 1px) 100%
+  );
+}
+.btn_char {
+  color: color-mix(
+    in srgb,
+    var(--btn-ink, var(--color-white)) calc(100% - var(--progress, 0) * 100%),
+    var(--color-black) calc(var(--progress, 0) * 100%)
+  );
+  font-variation-settings: "wght"
+    calc((var(--enter, 0) - var(--leave, 0)) * 200 + 600);
+  transform: scale(calc((var(--enter, 0) - var(--leave, 0)) * 0.4 + 1))
+    rotate(calc((var(--enter, 0) - var(--leave, 0)) * var(--deg, 0deg)));
+}

@@ -1,0 +1,33 @@
+import type { ComponentProps } from "react";
+
+/** Animated feature visual "capacity-check" (driven by `featureIconAnimations`). */
+export function CapacityCheckIcon(props: ComponentProps<"svg">) {
+  return (
+    <svg
+      {...props}
+      className="block h-auto w-full"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 296 90"
+      width="296"
+      height="90"
+      aria-hidden="true"
+      focusable="false"
+    >
+      <defs>
+        <clipPath id="capacity-check-m1">
+          <path d="M105.59 -45 L147.83 -45 L147.83 26.87 L147.83 42.56 L147.83 45 L-147.83 45 L-147.83 42.56 L-147.83 26.87 L-147.83 -45 L-105.59 -45 L-63.35 -45 L-21.12 -45 L21.12 -45 L63.36 -45 L105.59 -45 Z" fill="#000" transform="translate(147.83 45)" />
+        </clipPath>
+      </defs>
+      <g clipPath="url(#capacity-check-m1)">
+        <g data-l="Null 10" data-i="2" data-x="0" data-y="0" data-r="0" data-sx="1" data-sy="1" transform="translate(0 0)">
+          <g data-l="Vector" data-i="4" data-x="-106.84" data-y="45" data-r="0" data-sx="1" data-sy="1" transform="translate(-106.84 45)">
+            <path d="M105.59 5.75 L105.59 -45 L147.83 -45 L147.83 26.87 L147.83 42.56 L147.83 45 L-147.83 45 L-147.83 42.56 L-147.83 26.87 L-147.83 -45 L-105.59 -45 L-105.59 5.75 C-105.59 17.41 -96.14 26.87 -84.47 26.87 C-72.81 26.87 -63.35 17.41 -63.35 5.75 L-63.35 -45 L-21.12 -45 L-21.12 5.75 C-21.12 17.41 -11.66 26.87 0 26.87 C11.66 26.87 21.12 17.41 21.12 5.75 L21.12 -45 L63.36 -45 L63.36 5.75 C63.36 17.41 72.81 26.87 84.47 26.87 C96.14 26.87 105.59 17.41 105.59 5.75 Z" fill="currentColor" />
+          </g>
+          <g data-l="Vector 2" data-i="3" data-x="147.83" data-y="45" data-r="0" data-sx="1" data-sy="1" transform="translate(147.83 45)">
+            <path d="M105.59 5.75 L105.59 -45 L147.83 -45 L147.83 26.87 L147.83 42.56 L147.83 45 L-147.83 45 L-147.83 42.56 L-147.83 26.87 L-147.83 -45 L-105.59 -45 L-105.59 5.75 C-105.59 17.41 -96.14 26.87 -84.47 26.87 C-72.81 26.87 -63.35 17.41 -63.35 5.75 L-63.35 -45 L-21.12 -45 L-21.12 5.75 C-21.12 17.41 -11.66 26.87 0 26.87 C11.66 26.87 21.12 17.41 21.12 5.75 L21.12 -45 L63.36 -45 L63.36 5.75 C63.36 17.41 72.81 26.87 84.47 26.87 C96.14 26.87 105.59 17.41 105.59 5.75 Z" fill="currentColor" />
+          </g>
+        </g>
+      </g>
+    </svg>
+  );
+}

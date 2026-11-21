@@ -1,0 +1,30 @@
+.distraction_wrapper {
+  will-change: clip-path, scale;
+  scale: calc(0.9 + 0.1 * var(--intro, 0) - 0.1 * var(--leave, 0));
+  clip-path: inset(
+    0 round calc(var(--spacing) * 20 * (1 - var(--intro, 0) + var(--leave, 0)))
+  );
+}
+@media screen and (width<=479px) {
+  .distraction_wrapper {
+    will-change: scale;
+    clip-path: none;
+  }
+}
+.distraction_photo {
+  transition: opacity 0.6s;
+}
+.distraction_photo.is-ready {
+  opacity: 1;
+}
+@media screen and (width<=479px) {
+  .distraction .inner-tag {
+    font-size: calc(var(--spacing) * 12);
+    border-width: 0.75px;
+  }
+}
+@media (hover: none) and (pointer: coarse) {
+  .distraction .inner-tag {
+    will-change: transform, opacity;
+  }
+}

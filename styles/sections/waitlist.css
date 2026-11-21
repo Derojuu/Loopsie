@@ -1,0 +1,26 @@
+@media (width<=1023px) {
+  .waitlist_note {
+    font-size: calc(18 * var(--hand-scale) * var(--spacing));
+  }
+}
+@media (width<=479px) {
+  .waitlist .counter {
+    font-size: calc(96 * var(--spacing));
+  }
+  .waitlist_label {
+    font-size: calc(22 * var(--spacing));
+    line-height: 1.11;
+  }
+  .waitlist_note {
+    font-size: calc(16 * var(--hand-scale) * var(--spacing));
+    line-height: calc(27.2 * var(--spacing));
+  }
+  .waitlist .clock {
+    border-width: 0.75px;
+  }
+  .waitlist_title {
+    font-size: calc(24 * var(--spacing));
+    text-wrap: balance;
+    line-height: 1.11;
+  }
+}

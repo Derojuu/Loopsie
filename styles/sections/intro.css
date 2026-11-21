@@ -1,0 +1,83 @@
+.intro_sticky {
+  padding-top: calc(var(--nav-space) + var(--spacing) * 80);
+}
+@media screen and (width<=1023px) {
+  .intro_sticky {
+    min-height: 0;
+    padding-top: calc(var(--spacing) * 56);
+    padding-bottom: calc(var(--spacing) * 120);
+    position: relative;
+    top: auto;
+  }
+}
+@media screen and (width<=479px) {
+  .intro_sticky {
+    padding-bottom: calc(var(--spacing) * 100);
+  }
+  .intro h2 {
+    font-size: calc(var(--spacing) * 22);
+    line-height: 1.15;
+  }
+}
+@media screen and (width<=1023px) {
+  .intro_stage.main-grid {
+    padding-top: calc(var(--spacing) * 215);
+    row-gap: calc(var(--spacing) * 179);
+  }
+}
+@media screen and (width<=479px) {
+  .intro_stage.main-grid {
+    padding-top: calc(var(--spacing) * 170);
+    row-gap: calc(var(--spacing) * 156);
+  }
+}
+@media screen and (width<=1023px) {
+  .intro_logo-parent {
+    --spacing: calc(var(--size-font)/var(--size-unit) * 157/216);
+  }
+}
+@media screen and (width<=479px) {
+  .intro_logo-parent {
+    --spacing: calc(var(--size-font)/var(--size-unit) * 134/216);
+  }
+}
+.intro_mark {
+  aspect-ratio: 300/330;
+  width: 36%;
+}
+@media screen and (width<=1023px) {
+  .intro .intro_label {
+    font-size: calc(18 * var(--hand-scale) * var(--spacing));
+  }
+}
+@media screen and (width<=479px) {
+  .intro .intro_label {
+    font-size: calc(16 * var(--hand-scale) * var(--spacing));
+    line-height: calc(27.2 * var(--spacing));
+  }
+}
+.intro_overlay {
+  --reveal: calc(var(--progress)/0.6);
+  --reveal-edge: calc(var(--reveal) * 125%);
+  background: color-mix(
+    in srgb,
+    var(--color-grey) calc(var(--progress) * 0.8%),
+    transparent
+  );
+  backdrop-filter: blur(calc(var(--progress) * 30px));
+  mask: linear-gradient(
+    to top,
+    black calc(var(--reveal-edge) - 25%),
+    transparent var(--reveal-edge)
+  );
+  -webkit-mask: linear-gradient(
+    to top,
+    black calc(var(--reveal-edge) - 25%),
+    transparent var(--reveal-edge)
+  );
+}
+@media screen and (width<=1023px) {
+  .intro_overlay {
+    display: none;
+  }
+}
